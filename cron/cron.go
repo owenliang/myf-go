@@ -3,9 +3,9 @@ package cron
 import (
 	"context"
 	"fmt"
+	"github.com/owenliang/myf-go/client/mmongo"
 	v3cron "github.com/robfig/cron/v3"
 	"github.com/owenliang/myf-go/client/cat"
-	"github.com/owenliang/myf-go/client/dogx"
 	"github.com/owenliang/myf-go/client/mhttp"
 	"github.com/owenliang/myf-go/client/mmysql"
 	"github.com/owenliang/myf-go/client/mredis"
@@ -146,12 +146,12 @@ func (cron *MyfCron) initClients() (err error) {
 	if _, err = mredis.NewRedis(conf.MyfConf.Redis); err != nil {
 		return
 	}
-	// 拉起Dogx
-	if _, err = dogx.NewDogx(conf.MyfConf.Dogx); err != nil {
-		return
-	}
 	// 初始化http-client参数
 	if err = mhttp.InitHttpClient(conf.MyfConf.HttpClientConfig); err != nil {
+		return
+	}
+	// 拉起Mongo
+	if _, err = mmongo.NewMongo(conf.MyfConf.Mongo); err != nil {
 		return
 	}
 	return

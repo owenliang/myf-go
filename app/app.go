@@ -126,12 +126,10 @@ func (app *MyfApp) initClients() (err error) {
 	if err = mhttp.InitHttpClient(conf.MyfConf.HttpClientConfig); err != nil {
 		return
 	}
-
 	// 拉起Mongo
 	if _, err = mmongo.NewMongo(conf.MyfConf.Mongo); err != nil {
 		return
 	}
-
 	return
 }
 
