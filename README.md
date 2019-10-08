@@ -4,7 +4,7 @@ Myf框架的Golang框架核心库
 
 ## 特性
 
-* cat埋点的客户端实现，包括：dogx、mysql、redis、http
+* cat埋点的客户端实现，包括：mysql、redis、http
 * 订制的请求context，自动熔断超时请求，提供多种丰富特性
 * 原生的gin操作体验
 
