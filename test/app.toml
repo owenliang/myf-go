@@ -1,0 +1,76 @@
+domain = "myf-go.com"
+debug = 1
+
+# web模式
+[App]
+listen = "0.0.0.0:8087"
+
+# cron模式
+[Cron]
+waitGraceExit = 5000
+
+# cat配置
+[Cat]
+    isOpen = true
+
+#http-client配置
+[HttpClient]
+    timeout = 6000
+
+#mysql配置
+[Mysql]
+#[[Mysql.Group]]
+#    name = "default"
+#    database = "gin"
+#    username = "root"
+#    password = "baidu@123"
+#    [Mysql.Group.Master]
+#        maxConn = 10
+#        idleConn = 5
+#        idleTime = 5000
+#        [[Mysql.Group.Master.Instance]]
+#            host = "127.0.0.1"
+#            port = 3306
+#    [Mysql.Group.Slave]
+#        maxConn = 10
+#        idleConn = 5
+#        idleTime = 5000
+#        [[Mysql.Group.Slave.Instance]]
+#            host = "127.0.0.1"
+#            port = 3306
+
+
+#redis配置
+[Redis]
+#[[Redis.Group]]
+#    name = "default"
+#    password = ""
+#    [Redis.Group.Master]
+#        dialTimeout = 5000
+#        readTimeout = 5000
+#        writeTimeout = 5000
+#        [[Redis.Group.Master.Instance]]
+#            host = "127.0.0.1"
+#            port = 6379
+#    [Redis.Group.Slave]
+#            dialTimeout = 5000
+#            readTimeout = 5000
+#            writeTimeout = 5000
+#            [[Redis.Group.Slave.Instance]]
+#                host = "127.0.0.1"
+#                port = 6379
+
+[Mongo]
+#[[Mongo.Group]]
+#    name = "default"
+#    username = "default"
+#    password = ""
+#    database = "DefaultDB"
+#    maxPoolSize = 10
+#    minPoolSize = 5
+#    [[Mongo.Group.Instance]]
+#        host = "default_router01"
+#        port = 27017
+#    [[Mongo.Group.Instance]]
+#        host = "default_router02"
+#        port = 27017
